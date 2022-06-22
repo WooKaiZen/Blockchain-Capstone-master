@@ -1,3 +1,4 @@
+var SquareVerifier = artifacts.require('SquareVerifier');
 var SolnSquareVerifier = artifacts.require('SolnSquareVerifier');
 const proof = require('../../zokrates/code/square/proof.json');
 
@@ -7,7 +8,8 @@ contract('TestSolnSquareVerifier', accounts => {
 
     describe('match erc721 spec', function () {
         beforeEach(async function () { 
-            this.contract = await SolnSquareVerifier.new({from: account_one});
+            const verifier = await SquareVerifier.new({from: account_one});
+            this.contract = await SolnSquareVerifier.new(verifier.address,"Real Estate Token","RET",{from: account_one});
             // Test if an ERC721 token can be minted for contract - SolnSquareVerifier
             it('should be able to mint token', async function () { 
                 let minted = true;
