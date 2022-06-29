@@ -17,9 +17,8 @@ truffle compile
 Launch Ganache
 
 Run `truffle test`
-<div style="width:60px ; height:60px">
-![Screenshot1](images/TruffleTests.png)
-<div>
+
+<img src="images/TruffleTests.png" width="100" height="100">
 
 # Deployment on rinkeby
 
