@@ -7,9 +7,6 @@ of ownership of a property prior to minting the associated token.
 # Install
 
 Download or clone this repo, then run 
-`npm install`
-
-Move to `eth-contracts` folder, then run
 ```
 npm install
 truffle compile
