@@ -18,7 +18,7 @@ Launch Ganache
 
 Run `truffle test`
 
-<img src="images/TruffleTests.png" width="100" height="100">
+<img src="images/TruffleTests.png" width="400" height="300">
 
 # Deployment on rinkeby
 
@@ -52,9 +52,8 @@ eth-contracts/build/contracts/SolnSquareVerifier.json
 
 On myetherwallet.com, click `Interact with contract`, enter the deployed SolnSquareVerifier contract's address and ABI,
 and you'll be able to mint tokens:
-<div style="width:60px ; height:60px">
-![Screenshot2](images/MintToken.png)
-<div>
+
+<img src="images/MintToken.png" width="400" height="300">
 
 # OpenSea marketplace
 
@@ -79,9 +78,9 @@ https://rinkeby.etherscan.io/tx/0xb73ec7383c3cc4b42395c308fde4ba93be42cd03c5d484
 # Zokrates proof process
 
 Here is a Zokrates tutorial: https://zokrates.github.io/examples/rng_tutorial.html  
-<div style="width:60px ; height:60px">
-![Screenshot3](images/zokrates-process.png)
-<div>
+
+<img src="images/zokrates-process.png" width="400" height="300">
+
 You can use the following docker image: https://hub.docker.com/r/zokrates/zokrates  
 Compile the code in `zokrates/code/square/square.code`, then complete the steps in the above diagram
 with commands `setup`, `compute-witness`, `generate-proof`, and `export-verifier`.  
