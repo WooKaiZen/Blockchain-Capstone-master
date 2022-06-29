@@ -15,28 +15,6 @@ contract('TestSolnSquareVerifier', accounts => {
         it('should be able to mint token and add solution', async function () { 
             let minted = true;
             let result;
-            /*this.contract.mintToken (
-                1,
-                account_two,
-                proof.proof.a,
-                proof.proof.b,
-                proof.proof.c,
-                proof.inputs
-            );*/
-            /*let SolAddress = await this.contract.getSolutionAddress(
-                proof.proof.a,
-                proof.proof.b,
-                proof.proof.c,
-                proof.inputs
-            );
-            console.log(SolAddress);
-            let SolExists = await this.contract.doesSolutionExist(
-                proof.proof.a,
-                proof.proof.b,
-                proof.proof.c,
-                proof.inputs
-            );
-            console.log(SolExists);*/
             try {
                 result = await this.contract.mintToken (
                     1,
@@ -58,22 +36,6 @@ contract('TestSolnSquareVerifier', accounts => {
         it('should not be able to mint a token using an already used solution', async function () { 
             let minted = true;
             // follow-up on previous test
-            //let contractSolutions = await this.contract.solutions.call()
-            //assert.equal(contractSolutions.length,1,"should be able to add solution");
-            /*let SolAddress = await this.contract.getSolutionAddress(
-                proof.proof.a,
-                proof.proof.b,
-                proof.proof.c,
-                proof.inputs
-            );
-            console.log(SolAddress);
-            let SolExists = await this.contract.doesSolutionExist(
-                proof.proof.a,
-                proof.proof.b,
-                proof.proof.c,
-                proof.inputs
-            );
-            console.log(SolExists);*/
             try {
                 let result = await this.contract.mintToken (
                     2,
