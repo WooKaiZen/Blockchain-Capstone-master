@@ -79,7 +79,7 @@ https://rinkeby.etherscan.io/tx/0xb73ec7383c3cc4b42395c308fde4ba93be42cd03c5d484
 
 Here is a Zokrates tutorial: https://zokrates.github.io/examples/rng_tutorial.html  
 
-<img src="images/zokrates-process.png" width="500" height="300">
+<img src="images/zokrates-process.png" width="450" height="300">
 
 You can use the following docker image: https://hub.docker.com/r/zokrates/zokrates  
 Compile the code in `zokrates/code/square/square.code`, then complete the steps in the above diagram
