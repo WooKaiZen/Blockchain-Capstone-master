@@ -75,11 +75,11 @@ https://rinkeby.etherscan.io/tx/0xb73ec7383c3cc4b42395c308fde4ba93be42cd03c5d484
 
 # Zokrates proof process
 
-Here is a Zokrates tutorial: https://zokrates.github.io/examples/rng_tutorial.html .
+Here is a Zokrates tutorial: https://zokrates.github.io/examples/rng_tutorial.html  
 ![](images/zokrates-process.PNG)
-You can use the following docker image: https://hub.docker.com/r/zokrates/zokrates .
+You can use the following docker image: https://hub.docker.com/r/zokrates/zokrates  
 Compile the code in `zokrates/code/square/square.code`, then complete the steps in the above diagram
-with commands `setup`, `compute-witness`, `generate-proof`, and `export-verifier`.
+with commands `setup`, `compute-witness`, `generate-proof`, and `export-verifier`.  
 This is used to output files `eth-contracts/contracts/Verifier.sol` and `zokrates/code/square/proof.json`.
 
 # Project Resources
