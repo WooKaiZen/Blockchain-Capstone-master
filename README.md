@@ -96,11 +96,11 @@ You can use the following docker image: https://hub.docker.com/r/zokrates/zokrat
 container using command:  
 `docker run -v <path to your project folder>:/home/zokrates/code -ti zokrates/zokrates /bin/bash`  
 then complete the steps in the above diagram with Zokrates commands:  
-`/path/to/zokrates compile -i square/square.code`   
-`/path/to/zokrates setup`   
-`/path/to/zokrates compute-witness -a number square` e.g., 3 9   
-`/path/to/zokrates generate-proof`  
-`/path/to/zokrates export-verifier`   
+1.`/path/to/zokrates compile -i square/square.code`   
+2.`/path/to/zokrates setup`   
+3.`/path/to/zokrates compute-witness -a number square` e.g., 3 9   
+4.`/path/to/zokrates generate-proof`  
+5.`/path/to/zokrates export-verifier`   
 This is used to output files `eth-contracts/contracts/Verifier.sol` and `zokrates/code/square/proof.json`.
 
 # Project Resources
