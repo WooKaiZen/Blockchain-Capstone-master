@@ -93,8 +93,8 @@ Here is a Zokrates tutorial: https://zokrates.github.io/examples/rng_tutorial.ht
 <img src="images/zokrates-process.png" width="600" height="400">
 
 You can use the following docker image: https://hub.docker.com/r/zokrates/zokrates to run a docker
-container using command:
-`docker run -v <path to your project folder>:/home/zokrates/code -ti zokrates/zokrates /bin/bash`
+container using command:  
+`docker run -v <path to your project folder>:/home/zokrates/code -ti zokrates/zokrates /bin/bash`  
 then complete the steps in the above diagram with Zokrates commands:  
 `/path/to/zokrates compile -i square/square.code`   
 `/path/to/zokrates setup`   
