@@ -92,7 +92,7 @@ Here is a Zokrates tutorial: https://zokrates.github.io/examples/rng_tutorial.ht
 
 You can use the following docker image: https://hub.docker.com/r/zokrates/zokrates  
 Compile the code in `zokrates/code/square/square.code`, then complete the steps in the above diagram
-with commands `setup`, `compute-witness`, `generate-proof`, and `export-verifier`.  
+with Zokrates commands `setup`, `compute-witness`, `generate-proof`, and `export-verifier`.  
 This is used to output files `eth-contracts/contracts/Verifier.sol` and `zokrates/code/square/proof.json`.
 
 # Project Resources
