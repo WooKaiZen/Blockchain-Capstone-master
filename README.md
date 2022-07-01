@@ -101,6 +101,7 @@ then complete the steps in the above diagram with Zokrates commands:
 3. `/path/to/zokrates compute-witness -a number square` e.g., 3 9   
 4. `/path/to/zokrates generate-proof`  
 5. `/path/to/zokrates export-verifier`   
+
 This is used to output files `eth-contracts/contracts/Verifier.sol` and `zokrates/code/square/proof.json`.
 
 # Project Resources
