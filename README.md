@@ -33,19 +33,21 @@ Run `truffle migrate --network rinkeby --reset --compile-all`
 
 # Deployed contracts on Rinkeby
 
-The following contracts provide the proof process:
+The following contracts provide the Zero-Knowledge proof process:
 
-Verifier: `eth-contracts/contracts/Verifier.sol`
+* Verifier: `eth-contracts/contracts/Verifier.sol`
 
 `0x5f707eb3045d1c0ed70a3c26d0fdeb3e28125872`
 
 https://rinkeby.etherscan.io/address/0x5f707eb3045d1c0ed70a3c26d0fdeb3e28125872
 
-SolnSquareVerifier: `eth-contracts/contracts/SolnSquareVerifier.sol`
+* SolnSquareVerifier: `eth-contracts/contracts/SolnSquareVerifier.sol`
 
 `0xe57458a252c0acbe49f99a85bbd01f44a84bab71`
 
 https://rinkeby.etherscan.io/address/0xe57458a252c0acbe49f99a85bbd01f44a84bab71
+
+The Verifier.sol contract is created using Zokrates, see below for details.
 
 # Contracts ABI
 
