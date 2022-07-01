@@ -20,6 +20,13 @@ Run `truffle test`
 
 <img src="images/TruffleTests.png" width="600" height="450">
 
+Tests can also be run for each contract separately using the following commands:
+```
+truffle test ./test/TestERC721Mintable.js
+truffle test ./test/TestSquareVerifier.js
+truffle test ./test/TestSolnSquareVerifier.js
+```
+
 # Deployment on rinkeby
 
 Run `truffle migrate --network rinkeby --reset --compile-all`
