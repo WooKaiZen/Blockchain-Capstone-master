@@ -18,7 +18,7 @@ Launch Ganache
 
 Run `truffle test`
 
-<img src="images/TruffleTests.png" width="600" height="450">
+<img src="images/TruffleTests.png" width="800" height="600">
 
 Tests can also be run for each contract separately using the following commands:
 ```
