@@ -42,6 +42,7 @@ https://rinkeby.etherscan.io/address/0xe57458a252c0acbe49f99a85bbd01f44a84bab71
 
 # Contracts ABI
 
+Contracts' ABIs can be found in the following files:
 ```
 eth-contracts/build/contracts/ERC721Mintable.json
 eth-contracts/build/contracts/Verifier.json
@@ -50,8 +51,9 @@ eth-contracts/build/contracts/SolnSquareVerifier.json
 
 # Interact with contract using myetherwallet
 
-On myetherwallet.com, click `Interact with contract`, enter the deployed SolnSquareVerifier contract's address and ABI,
-and you'll be able to mint tokens:
+Once the contracts are deployed on Rinkeby, you can interact with it by going to myetherwallet.com.
+Click `Interact with contract`, enter the deployed SolnSquareVerifier contract's address and ABI,
+and you'll then be able to mint tokens:
 
 <img src="images/MintToken.png" width="600" height="450">
 
