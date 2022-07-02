@@ -1,10 +1,10 @@
-pragma solidity >=0.4.24;
+pragma solidity >=0.5.0;
 //import 'openzeppelin-solidity/contracts/utils/Address.sol';
 import 'openzeppelin-solidity/contracts/drafts/Counters.sol';
 import 'openzeppelin-solidity/contracts/math/SafeMath.sol';
 import 'openzeppelin-solidity/contracts/token/ERC721/IERC721Receiver.sol';
 //import '.deps/npm/openzeppelin-solidity/contracts/utils/Strings.sol';
-import "./Oraclize.sol";
+//import "./Oraclize.sol";
 contract Ownable {
     //  TODO's
     //  1) create a private '_owner' variable of type address with a public getter function
@@ -30,6 +30,7 @@ contract Ownable {
         _owner = newOwner;
     }
 }
+
 //  TODO's: Create a Pausable contract that inherits from the Ownable contract
 //  1) create a private '_paused' variable of type bool
 //  2) create a public setter using the inherited onlyOwner modifier 
@@ -55,6 +56,7 @@ contract Pausable is Ownable {
     event Paused(address pauser);
     event Unpaused(address unpauser);
 }
+
 contract ERC165 {
     bytes4 private constant _INTERFACE_ID_ERC165 = 0x01ffc9a7;
     /*
@@ -86,6 +88,7 @@ contract ERC165 {
         _supportedInterfaces[interfaceId] = true;
     }
 }
+
 contract ERC721 is Pausable, ERC165 {
     event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
     event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);
@@ -242,7 +245,8 @@ contract ERC721 is Pausable, ERC165 {
         }
     }
 }
-contract ERC721Enumerable is ERC165, ERC721 {
+
+contract ERC721Enumerable is ERC165, ERC721 {//
     // Mapping from owner to list of owned token IDs
     mapping(address => uint256[]) private _ownedTokens;
     // Mapping from token ID to index of the owner tokens list
@@ -261,7 +265,7 @@ contract ERC721Enumerable is ERC165, ERC721 {
     /**
      * @dev Constructor function
      */
-    constructor () public {
+    constructor () public{// 
         // register the supported interface to conform to ERC721Enumerable via ERC165
         _registerInterface(_INTERFACE_ID_ERC721_ENUMERABLE);
     }
@@ -385,7 +389,8 @@ contract ERC721Enumerable is ERC165, ERC721 {
         _allTokensIndex[tokenId] = 0;
     }
 }
-contract ERC721Metadata is ERC721Enumerable, usingOraclize { 
+
+contract ERC721Metadata is ERC721Enumerable { //, usingOraclize 
     
     // TODO: Create private vars for token _name, _symbol, and _baseTokenURI (string)
     string private _name;
@@ -422,6 +427,39 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
         return _tokenURIs[tokenId];
     }
     
+    function strConcat(string memory _a, string memory _b) internal pure returns (string memory) {
+        bytes memory _ba = bytes(_a);
+        bytes memory _bb = bytes(_b);
+        string memory ab = new string(_ba.length + _bb.length);
+        bytes memory bab = bytes(ab);
+        uint k = 0;
+        uint i = 0;
+        for (i = 0; i < _ba.length; i++) bab[k++] = _ba[i];
+        for (i = 0; i < _bb.length; i++) bab[k++] = _bb[i];
+        return string(bab);
+    }
+
+    function toString(uint256 value) internal pure returns (string memory) {
+        // Inspired by OraclizeAPI's implementation - MIT licence
+        // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol
+
+        if (value == 0) {
+            return "0";
+        }
+        uint256 temp = value;
+        uint256 digits;
+        while (temp != 0) {
+            digits++;
+            temp /= 10;
+        }
+        bytes memory buffer = new bytes(digits);
+        while (value != 0) {
+            digits -= 1;
+            buffer[digits] = bytes1(uint8(48 + uint256(value % 10)));
+            value /= 10;
+        }
+        return string(buffer);
+    }
     // TODO: Create an internal function to set the tokenURI of a specified tokenId
     // It should be the _baseTokenURI + the tokenId in string form
     // TIP #1: use strConcat() from the imported oraclizeAPI lib to set the complete token URI
@@ -430,7 +468,7 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
     // require the token exists before setting
     function setTokenURI(uint256 tokenId) internal {
         require(_exists(tokenId));
-        _tokenURIs[tokenId] = strConcat(_baseTokenURI,uint2str(tokenId));
+        _tokenURIs[tokenId] = strConcat(_baseTokenURI,toString(tokenId));//Strings.toString(tokenId));//uint2str(tokenId));
     }
 }
 //  TODO's: Create CustomERC721Token contract that inherits from the ERC721Metadata contract. You can name this contract as you please
